@@ -9,8 +9,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f9f8f6;
-            color: #333333;
+            background-color: #faf9f6;
+            color: #444444;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -24,9 +24,9 @@
             max-width: 450px;
             width: 100%;
             background-color: #ffffff;
-            border: 3px solid #d4af37; /* Χρυσό Περίγραμμα */
+            border: 2px solid #e3d4b6; /* Απαλό Χρυσό Περίγραμμα */
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 30px rgba(227, 212, 182, 0.2);
             overflow: hidden;
             text-align: center;
             box-sizing: border-box;
@@ -34,6 +34,200 @@
 
         .passport-header {
             background-color: #ffffff;
+            padding: 30px 20px 10px 20px;
+            border-bottom: 1px double #ede4d3;
+            margin: 0 20px;
+        }
+
+        .passport-header h1 {
+            font-family: 'Cinzel', serif;
+            color: #caa96e; /* Ανοιχτό Χρυσό */
+            font-size: 1.4em;
+            letter-spacing: 4px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .passport-header h2 {
+            font-size: 0.85em;
+            letter-spacing: 3px;
+            color: #a0a0a0;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Απαλό Χρυσό Έμβλημα / Σφραγίδα */
+        .passport-emblem {
+            width: 80px;
+            height: 80px;
+            margin: 25px auto;
+            border: 2px dashed #caa96e;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .passport-emblem::before {
+            content: "✈";
+            font-size: 2rem;
+            color: #caa96e;
+        }
+
+        /* Στοιχεία Καλεσμένου & Πτήσης */
+        .passport-body {
+            padding: 25px 30px;
+            text-align: left;
+        }
+
+        .passport-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f7f4ec;
+            padding-bottom: 5px;
+        }
+
+        .info-block {
+            flex: 1;
+        }
+
+        .label {
+            font-size: 0.7em;
+            color: #baa074; /* Απαλό καφέ-χρυσό για ευανάγνωστα γράμματα */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .value {
+            font-size: 1.05em;
+            color: #333333;
+            font-weight: 400;
+        }
+
+        .names {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            color: #caa96e; /* Ανοιχτό Σαμπανιζέ Χρυσό */
+            font-weight: 700;
+            text-align: center;
+            margin: 15px 0 25px 0;
+            letter-spacing: 2px;
+        }
+
+        /* Κάρτα Επιβίβασης / RSVP */
+        .boarding-pass-zone {
+            background: linear-gradient(135deg, #ffffff 0%, #fffefb 100%);
+            border-top: 2px dashed #e3d4b6;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        /* Εφέ κομμένου εισιτηρίου στις άκρες */
+        .boarding-pass-zone::before, .boarding-pass-zone::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #faf9f6;
+            border-radius: 50%;
+        }
+        .boarding-pass-zone::before { left: -10px; }
+        .boarding-pass-zone::after { right: -10px; }
+
+        .rsvp-text {
+            font-size: 0.9em;
+            color: #666666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Κουμπί με Απαλό Χρυσό Gradient */
+        .btn-gold {
+            display: block;
+            background: linear-gradient(135deg, #e3d4b6 0%, #caa96e 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            border-radius: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(202, 169, 110, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(202, 169, 110, 0.35);
+            background: linear-gradient(135deg, #caa96e 0%, #baa074 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="passport-card">
+        
+        <!-- Εξώφυλλο / Κεφαλίδα Διαβατηρίου -->
+        <div class="passport-header">
+            <h1>Passport</h1>
+            <h2>Boarding Pass Invitation</h2>
+        </div>
+
+        <!-- Έμβλημα Αεροπλάνου -->
+        <div class="passport-emblem"></div>
+
+        <!-- Στοιχεία Διαβατηρίου -->
+        <div class="passport-body">
+            
+            <div class="label" style="text-align: center;">Ονόματα Επιβατών / Passengers</div>
+            <div class="names">ΖΩΗ & ΔΗΜΗΤΡΗΣ</div>
+
+            <div class="passport-row">
+                <div class="info-block">
+                    <span class="label">Προορισμός / Destination</span>
+                    <span class="value">Κτήμα Γάμου, Αθήνα</span>
+                </div>
+            </div>
+
+            <div class="passport-row">
+                <div class="info-block">
+                    <span class="label">Ημερομηνία / Date</span>
+                    <span class="value">29 Αυγούστου 2026</span>
+                </div>
+                <div class="info-block" style="text-align: right;">
+                    <span class="label">Ώρα / Time</span>
+                    <span class="value">19:00</span>
+                </div>
+            </div>
+
+            <div class="passport-row" style="border-bottom: none; margin-bottom: 0;">
+                <div class="info-block">
+                    <span class="label">Τοποθεσία / Venue</span>
+                    <span class="value">Ιερός Ναός Αγίας Μαρίνας</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ζώνη Επιβίβασης / RSVP -->
+        <div class="boarding-pass-zone">
+            <span class="label" style="margin-bottom: 10px; display: block;">Κάρτα Επιβίβασης / Boarding Pass</span>
+            <p class="rsvp-text">Παρακαλούμε επιβεβαιώστε την «επιβίβασή» σας και τον αριθμό των ατόμων πατώντας το κουμπί RSVP παρακάτω.</p>
+            
+            <!-- Μην ξεχάσετε να αλλάξετε το # με το Link από το δικό σας Google Form -->
+            <a href="#" class="btn-gold" target="_blank">Επιβεβαιωση RSVP</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
             padding: 30px 20px 10px 20px;
             border-bottom: 1px double #e5c158;
             margin: 0 20px;
