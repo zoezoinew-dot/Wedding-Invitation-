@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Wedding Passport - Ζωή & Δημήτρης</title>
 
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             box-sizing: border-box;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
             margin: 0;
             padding: 20px;
+
             min-height: 100vh;
 
             display: flex;
@@ -28,42 +49,50 @@
             font-family: 'Montserrat', sans-serif;
 
             background:
-                radial-gradient(circle at top, #fffdf7 0%, #f9f8f6 45%, #f3f0e8 100%);
+                radial-gradient(
+                    circle at top,
+                    #fffefb 0%,
+                    #f9f8f6 50%,
+                    #f1eee5 100%
+                );
 
             color: #333;
         }
 
-        /* =========================================
-           MAIN CARD
-        ========================================= */
+
+        /* =====================================================
+           MAIN PASSPORT
+        ===================================================== */
 
         .passport-card {
+
             width: 100%;
             max-width: 450px;
 
-            background: #fff;
+            background: #ffffff;
 
             border: 2px solid #d4af37;
+
             border-radius: 18px;
 
             overflow: hidden;
 
             box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.08),
-                0 5px 20px rgba(212, 175, 55, 0.12);
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                0 5px 25px rgba(212, 175, 55, 0.15);
 
-            position: relative;
         }
 
 
-        /* =========================================
-           CLOSED TICKET
-        ========================================= */
+        /* =====================================================
+           FRONT / CLOSED TICKET
+        ===================================================== */
 
         .ticket-cover {
-            position: relative;
 
-            min-height: 330px;
+            min-height: 390px;
+
+            padding: 45px 25px;
 
             display: flex;
             flex-direction: column;
@@ -74,169 +103,234 @@
 
             cursor: pointer;
 
-            padding: 40px 25px;
+            position: relative;
 
             background:
                 linear-gradient(
                     145deg,
                     #ffffff 0%,
-                    #fffdf7 50%,
-                    #faf6e9 100%
+                    #fffdf7 55%,
+                    #faf5e5 100%
                 );
 
             transition:
                 opacity 0.7s ease,
-                transform 0.8s cubic-bezier(.4,0,.2,1),
-                max-height 0.8s ease;
+                transform 0.8s ease,
+                max-height 0.9s ease,
+                padding 0.9s ease;
+
+            overflow: hidden;
+
         }
 
+
         .ticket-cover:hover {
+
             background:
                 linear-gradient(
                     145deg,
-                    #ffffff 0%,
-                    #fffaf0 100%
+                    #ffffff,
+                    #fff9eb
                 );
+
         }
 
-        .ticket-cover.hidden {
+
+        /* όταν ανοίξει */
+
+        .ticket-cover.opened {
+
             opacity: 0;
-            transform: translateY(-30px);
+
+            transform: translateY(-40px);
+
             max-height: 0;
+
             min-height: 0;
+
             padding-top: 0;
             padding-bottom: 0;
+
             pointer-events: none;
-            overflow: hidden;
+
         }
+
+
+        /* =====================================================
+           COVER ELEMENTS
+        ===================================================== */
 
         .cover-small {
-            font-size: 0.68rem;
-            letter-spacing: 4px;
+
             color: #aa9146;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
 
-        .cover-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 0.65rem;
 
-            letter-spacing: 5px;
-
-            color: #b3922e;
-
-            margin: 0;
-        }
-
-        .cover-subtitle {
-            margin-top: 12px;
-
-            font-size: 0.72rem;
-            letter-spacing: 3px;
-
-            color: #999;
+            letter-spacing: 4px;
 
             text-transform: uppercase;
-        }
-
-        /* Gold circle */
-
-        .cover-emblem {
-            width: 95px;
-            height: 95px;
-
-            border: 2px solid #d4af37;
-            border-radius: 50%;
 
             margin-bottom: 25px;
 
+        }
+
+
+        .cover-title {
+
+            margin: 0;
+
+            font-family: 'Cinzel', serif;
+
+            font-size: 2rem;
+
+            font-weight: 600;
+
+            letter-spacing: 6px;
+
+            color: #b3922e;
+
+        }
+
+
+        .cover-subtitle {
+
+            margin-top: 12px;
+
+            color: #999;
+
+            font-size: 0.68rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           GOLD AIRPLANE EMBLEM
+        ===================================================== */
+
+        .cover-emblem {
+
+            width: 100px;
+            height: 100px;
+
+            margin-bottom: 30px;
+
+            border: 2px solid #d4af37;
+
+            border-radius: 50%;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             position: relative;
 
             color: #d4af37;
+
         }
+
 
         .cover-emblem::before {
+
             content: "✈";
 
-            font-size: 2.1rem;
+            font-size: 2.2rem;
+
         }
 
+
         .cover-emblem::after {
+
             content: "";
 
             position: absolute;
 
-            width: 112px;
-            height: 112px;
+            width: 116px;
+            height: 116px;
 
             border: 1px dashed #d4af37;
 
             border-radius: 50%;
 
             opacity: 0.7;
+
         }
 
-        .tap-text {
-            margin-top: 35px;
 
-            font-size: 0.65rem;
-            letter-spacing: 2px;
+        .tap-text {
+
+            margin-top: 40px;
+
+            font-size: 0.62rem;
 
             color: #aaa;
+
+            letter-spacing: 2px;
 
             text-transform: uppercase;
 
             animation: pulse 2s infinite;
+
         }
 
+
         @keyframes pulse {
-            0%, 100% {
-                opacity: 0.45;
+
+            0%,
+            100% {
+                opacity: 0.4;
             }
 
             50% {
                 opacity: 1;
             }
+
         }
 
 
-        /* =========================================
-           DETAILS SECTION
-        ========================================= */
+        /* =====================================================
+           DETAILS
+        ===================================================== */
 
         .ticket-details {
+
             opacity: 0;
 
             max-height: 0;
 
             overflow: hidden;
 
-            transform: translateY(25px);
+            transform: translateY(30px);
 
             transition:
-                opacity 0.8s ease 0.2s,
-                transform 0.8s ease 0.2s,
+                opacity 0.8s ease 0.25s,
+                transform 0.8s ease 0.25s,
                 max-height 1s ease;
+
         }
 
-        .ticket-details.show {
+
+        .ticket-details.visible {
+
             opacity: 1;
-            max-height: 1000px;
+
+            max-height: 1200px;
+
             transform: translateY(0);
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            HEADER
-        ========================================= */
+        ===================================================== */
 
         .passport-header {
+
             text-align: center;
 
             padding: 30px 20px 15px;
@@ -244,9 +338,14 @@
             margin: 0 20px;
 
             border-bottom: 1px double #e5c158;
+
         }
 
+
         .passport-header h1 {
+
+            margin: 0 0 5px;
+
             font-family: 'Cinzel', serif;
 
             color: #b3922e;
@@ -255,31 +354,34 @@
 
             letter-spacing: 4px;
 
-            margin: 0 0 5px;
-
             text-transform: uppercase;
+
         }
 
+
         .passport-header h2 {
-            font-size: 0.7rem;
-
-            letter-spacing: 3px;
-
-            color: #999;
 
             margin: 0;
 
+            color: #999;
+
+            font-size: 0.68rem;
+
+            letter-spacing: 3px;
+
             text-transform: uppercase;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            EMBLEM
-        ========================================= */
+        ===================================================== */
 
         .passport-emblem {
-            width: 70px;
-            height: 70px;
+
+            width: 72px;
+            height: 72px;
 
             margin: 25px auto;
 
@@ -288,59 +390,75 @@
             border-radius: 50%;
 
             display: flex;
-            align-items: center;
+
             justify-content: center;
+            align-items: center;
 
             color: #d4af37;
+
         }
+
 
         .passport-emblem::before {
+
             content: "✈";
+
             font-size: 1.6rem;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            BODY
-        ========================================= */
+        ===================================================== */
 
         .passport-body {
+
             padding: 10px 30px 25px;
+
         }
 
+
         .label {
+
             display: block;
 
-            font-size: 0.65rem;
+            margin-bottom: 5px;
 
             color: #aa9146;
 
-            text-transform: uppercase;
-
-            letter-spacing: 1.5px;
+            font-size: 0.65rem;
 
             font-weight: 600;
 
-            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
         }
 
-        .names {
-            font-family: 'Cinzel', serif;
 
-            font-size: 1.3rem;
+        .names {
+
+            margin: 10px 0 28px;
 
             color: #b3922e;
 
+            font-family: 'Cinzel', serif;
+
+            font-size: 1.35rem;
+
             font-weight: 700;
+
+            letter-spacing: 1px;
 
             text-align: center;
 
-            margin: 10px 0 25px;
-
-            letter-spacing: 1px;
         }
 
+
         .passport-row {
+
             display: flex;
 
             justify-content: space-between;
@@ -349,49 +467,58 @@
 
             margin-bottom: 18px;
 
+            padding-bottom: 9px;
+
             border-bottom: 1px solid #f2edd9;
 
-            padding-bottom: 8px;
         }
+
 
         .info-block {
+
             flex: 1;
+
         }
 
+
         .value {
-            font-size: 0.9rem;
 
             color: #222;
 
-            font-weight: 400;
+            font-size: 0.88rem;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            RSVP AREA
-        ========================================= */
+        ===================================================== */
 
         .boarding-pass-zone {
+
+            position: relative;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
             background:
                 linear-gradient(
                     135deg,
-                    #ffffff 0%,
-                    #fffdf7 100%
+                    #ffffff,
+                    #fffdf7
                 );
 
             border-top: 2px dashed #d4af37;
 
-            padding: 28px 25px 30px;
-
-            position: relative;
-
-            text-align: center;
         }
 
-        /* Ticket cutouts */
+
+        /* Ticket holes */
 
         .boarding-pass-zone::before,
         .boarding-pass-zone::after {
+
             content: "";
 
             position: absolute;
@@ -404,56 +531,63 @@
             background: #f9f8f6;
 
             border-radius: 50%;
+
         }
+
 
         .boarding-pass-zone::before {
             left: -11px;
         }
 
+
         .boarding-pass-zone::after {
             right: -11px;
         }
 
+
         .rsvp-text {
-            font-size: 0.78rem;
 
-            color: #666;
-
-            line-height: 1.6;
+            max-width: 350px;
 
             margin: 10px auto 20px;
 
-            max-width: 350px;
+            color: #666;
+
+            font-size: 0.78rem;
+
+            line-height: 1.6;
+
         }
 
 
-        /* =========================================
-           RSVP BUTTON
-        ========================================= */
+        /* =====================================================
+           RSVP OPEN BUTTON
+        ===================================================== */
 
         .btn-gold {
+
             width: 100%;
 
+            padding: 14px 20px;
+
             border: none;
+
+            border-radius: 25px;
 
             background:
                 linear-gradient(
                     135deg,
-                    #d4af37 0%,
-                    #b3922e 100%
+                    #d4af37,
+                    #b3922e
                 );
 
-            color: white;
-
-            padding: 14px 20px;
+            color: #fff;
 
             font-family: 'Montserrat', sans-serif;
 
-            font-size: 0.78rem;
+            font-size: 0.75rem;
 
             font-weight: 600;
-
-            border-radius: 25px;
 
             letter-spacing: 2px;
 
@@ -465,21 +599,26 @@
                 0 5px 15px rgba(179, 146, 46, 0.25);
 
             transition: all 0.3s ease;
+
         }
 
+
         .btn-gold:hover {
+
             transform: translateY(-2px);
 
             box-shadow:
-                0 8px 20px rgba(179, 146, 46, 0.35);
+                0 8px 22px rgba(179, 146, 46, 0.35);
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            RSVP FORM
-        ========================================= */
+        ===================================================== */
 
         .rsvp-form {
+
             max-height: 0;
 
             opacity: 0;
@@ -489,185 +628,219 @@
             transform: translateY(15px);
 
             transition:
-                max-height 0.6s ease,
+                max-height 0.7s ease,
                 opacity 0.5s ease,
                 transform 0.5s ease;
 
-            text-align: left;
         }
 
+
         .rsvp-form.open {
+
             max-height: 500px;
 
             opacity: 1;
 
             transform: translateY(0);
 
-            margin-top: 20px;
+            margin-top: 22px;
+
         }
 
-        .form-title {
-            text-align: center;
 
-            font-family: 'Cinzel', serif;
+        .form-title {
+
+            margin-bottom: 16px;
 
             color: #b3922e;
 
+            font-family: 'Cinzel', serif;
+
             font-size: 1rem;
 
-            margin-bottom: 18px;
+            text-align: center;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            YES / NO
-        ========================================= */
+        ===================================================== */
 
         .attendance-options {
+
             display: flex;
 
             gap: 10px;
 
             margin-bottom: 18px;
+
         }
+
 
         .attendance-option {
+
             flex: 1;
 
-            position: relative;
         }
+
 
         .attendance-option input {
-            position: absolute;
 
-            opacity: 0;
+            display: none;
 
-            pointer-events: none;
         }
 
+
         .attendance-option label {
+
+            min-height: 48px;
+
+            padding: 8px;
+
             display: flex;
 
             align-items: center;
 
             justify-content: center;
 
-            min-height: 48px;
-
             border: 1px solid #ded4b5;
 
             border-radius: 10px;
 
-            cursor: pointer;
-
-            font-size: 0.75rem;
-
-            font-weight: 600;
+            background: #fff;
 
             color: #777;
 
+            font-size: 0.7rem;
+
+            font-weight: 600;
+
+            text-align: center;
+
+            cursor: pointer;
+
             transition: all 0.25s ease;
 
-            background: white;
         }
 
-        .attendance-option input:checked + label {
-            background: #b3922e;
 
-            color: white;
+        .attendance-option input:checked + label {
+
+            background: #b3922e;
 
             border-color: #b3922e;
 
+            color: #fff;
+
             box-shadow:
                 0 4px 12px rgba(179, 146, 46, 0.25);
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            NUMBER OF PEOPLE
-        ========================================= */
+        ===================================================== */
 
         .guests-field {
-            opacity: 0;
 
             max-height: 0;
+
+            opacity: 0;
 
             overflow: hidden;
 
             transition:
-                opacity 0.4s ease,
-                max-height 0.5s ease;
+                max-height 0.5s ease,
+                opacity 0.4s ease;
+
         }
+
 
         .guests-field.visible {
+
+            max-height: 120px;
+
             opacity: 1;
 
-            max-height: 150px;
-
             margin-bottom: 15px;
+
         }
 
+
         .guests-field label {
+
             display: block;
 
-            font-size: 0.65rem;
+            margin-bottom: 7px;
 
             color: #aa9146;
 
-            text-transform: uppercase;
+            font-size: 0.65rem;
+
+            font-weight: 600;
 
             letter-spacing: 1.3px;
 
-            margin-bottom: 7px;
+            text-transform: uppercase;
+
         }
 
+
         .guests-field select {
+
             width: 100%;
 
             height: 46px;
+
+            padding: 0 12px;
 
             border: 1px solid #ded4b5;
 
             border-radius: 10px;
 
-            background: white;
+            outline: none;
 
-            padding: 0 12px;
-
-            font-family: 'Montserrat', sans-serif;
+            background: #fff;
 
             color: #333;
 
-            outline: none;
+            font-family: 'Montserrat', sans-serif;
 
             cursor: pointer;
+
         }
+
 
         .guests-field select:focus {
+
             border-color: #b3922e;
+
         }
 
 
-        /* =========================================
-           CONFIRM BUTTON
-        ========================================= */
+        /* =====================================================
+           CONFIRM RSVP
+        ===================================================== */
 
         .confirm-rsvp {
+
             width: 100%;
 
+            padding: 12px;
+
             border: 1px solid #b3922e;
+
+            border-radius: 10px;
 
             background: transparent;
 
             color: #b3922e;
 
-            padding: 12px;
-
-            border-radius: 10px;
-
             font-family: 'Montserrat', sans-serif;
 
-            font-size: 0.75rem;
+            font-size: 0.72rem;
 
             font-weight: 600;
 
@@ -676,22 +849,26 @@
             cursor: pointer;
 
             transition: all 0.3s ease;
+
         }
+
 
         .confirm-rsvp:hover {
+
             background: #b3922e;
-            color: white;
+
+            color: #fff;
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            SUCCESS MESSAGE
-        ========================================= */
+        ===================================================== */
 
         .success-message {
-            display: none;
 
-            text-align: center;
+            display: none;
 
             padding: 15px 5px;
 
@@ -699,16 +876,24 @@
 
             font-size: 0.8rem;
 
-            line-height: 1.6;
+            line-height: 1.7;
+
+            text-align: center;
+
         }
 
+
         .success-message.show {
+
             display: block;
 
             animation: fadeIn 0.5s ease;
+
         }
 
+
         @keyframes fadeIn {
+
             from {
                 opacity: 0;
                 transform: translateY(10px);
@@ -718,346 +903,424 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
 
-        /* =========================================
+        /* =====================================================
            MOBILE
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 480px) {
 
             body {
-                padding: 12px;
+
+                padding: 10px;
+
             }
 
-            .passport-card {
-                border-radius: 15px;
-            }
 
             .ticket-cover {
-                min-height: 310px;
+
+                min-height: 360px;
+
             }
+
 
             .cover-title {
-                font-size: 1.45rem;
-                letter-spacing: 4px;
+
+                font-size: 1.6rem;
+
+                letter-spacing: 5px;
+
             }
+
 
             .passport-body {
+
                 padding-left: 22px;
                 padding-right: 22px;
+
             }
 
-            .passport-row {
-                gap: 12px;
+
+            .boarding-pass-zone {
+
+                padding-left: 20px;
+                padding-right: 20px;
+
             }
+
 
             .value {
+
                 font-size: 0.82rem;
+
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
 
-<div class="passport-card">
+    <!-- =====================================================
+         MAIN PASSPORT
+    ===================================================== -->
+
+    <div class="passport-card">
 
 
-    <!-- =========================================
-         ΚΛΕΙΣΤΟ ΕΙΣΙΤΗΡΙΟ
-    ========================================== -->
+        <!-- =================================================
+             CLOSED TICKET
+        ================================================== -->
 
-    <div
-        class="ticket-cover"
-        id="ticketCover"
-        onclick="openTicket()"
-    >
+        <div
+            class="ticket-cover"
+            id="ticketCover"
+            onclick="openTicket()"
+        >
 
-        <div class="cover-small">
-            You're Invited
-        </div>
-
-        <div class="cover-emblem"></div>
-
-        <h1 class="cover-title">
-            WEDDING
-        </h1>
-
-        <div class="cover-subtitle">
-            Boarding Pass
-        </div>
-
-        <div class="tap-text">
-            Tap to reveal invitation
-        </div>
-
-    </div>
+            <div class="cover-small">
+                You're Invited
+            </div>
 
 
-    <!-- =========================================
-         ΛΕΠΤΟΜΕΡΕΙΕΣ ΓΑΜΟΥ
-    ========================================== -->
+            <div class="cover-emblem"></div>
 
-    <div
-        class="ticket-details"
-        id="ticketDetails"
-    >
 
-        <div class="passport-header">
-
-            <h1>
-                Wedding Passport
+            <h1 class="cover-title">
+                WEDDING
             </h1>
 
-            <h2>
-                Boarding Pass Invitation
-            </h2>
+
+            <div class="cover-subtitle">
+                Boarding Pass
+            </div>
+
+
+            <div class="tap-text">
+                Tap to reveal invitation
+            </div>
 
         </div>
 
 
-        <div class="passport-emblem"></div>
+
+        <!-- =================================================
+             WEDDING DETAILS
+        ================================================== -->
+
+        <div
+            class="ticket-details"
+            id="ticketDetails"
+        >
 
 
-        <div class="passport-body">
+            <!-- HEADER -->
 
-            <div
-                class="label"
-                style="text-align:center;"
-            >
-                Ονόματα Επιβατών / Passengers
-            </div>
+            <div class="passport-header">
 
-            <div class="names">
-                Ζωή & Δημήτρης
-            </div>
+                <h1>
+                    Wedding Passport
+                </h1>
 
-
-            <div class="passport-row">
-
-                <div class="info-block">
-
-                    <span class="label">
-                        Προορισμός / Destination
-                    </span>
-
-                    <span class="value">
-                        Legend, Νέα Ρόδα
-                    </span>
-
-                </div>
+                <h2>
+                    Boarding Pass Invitation
+                </h2>
 
             </div>
 
 
-            <div class="passport-row">
 
-                <div class="info-block">
+            <!-- EMBLEM -->
 
-                    <span class="label">
-                        Ημερομηνία / Date
-                    </span>
+            <div class="passport-emblem"></div>
 
-                    <span class="value">
-                        12 Σεπτεμβρίου 2026
-                    </span>
 
-                </div>
+
+            <!-- DETAILS -->
+
+            <div class="passport-body">
 
 
                 <div
-                    class="info-block"
-                    style="text-align:right;"
+                    class="label"
+                    style="text-align:center;"
                 >
-
-                    <span class="label">
-                        Ώρα / Time
-                    </span>
-
-                    <span class="value">
-                        19:00
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="passport-row"
-                style="border-bottom:none; margin-bottom:0;"
-            >
-
-                <div class="info-block">
-
-                    <span class="label">
-                        Τοποθεσία / Venue
-                    </span>
-
-                    <span class="value">
-                        Εκκλησάκι Αγίων Θεοδώρων
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================================
-             RSVP
-        ========================================== -->
-
-        <div class="boarding-pass-zone">
-
-            <span
-                class="label"
-                style="text-align:center;"
-            >
-                Κάρτα Επιβίβασης / Boarding Pass
-            </span>
-
-
-            <p class="rsvp-text">
-
-                Παρακαλούμε επιβεβαιώστε την
-                «επιβίβασή» σας και τον αριθμό
-                των ατόμων.
-
-            </p>
-
-
-            <button
-                class="btn-gold"
-                id="rsvpButton"
-                onclick="openRSVP()"
-            >
-                Επιβεβαίωση RSVP
-            </button>
-
-
-            <!-- RSVP FORM -->
-
-            <div
-                class="rsvp-form"
-                id="rsvpForm"
-            >
-
-                <div class="form-title">
-                    Θα παρευρεθείτε;
+                    Ονόματα Επιβατών / Passengers
                 </div>
 
 
-                <div class="attendance-options">
-
-                    <div class="attendance-option">
-
-                        <input
-                            type="radio"
-                            id="yes"
-                            name="attendance"
-                            value="yes"
-                            onchange="toggleGuests()"
-                        >
-
-                        <label for="yes">
-                            ✓ Ναι, θα έρθω
-                        </label>
-
-                    </div>
+                <div class="names">
+                    Ζωή & Δημήτρης
+                </div>
 
 
-                    <div class="attendance-option">
 
-                        <input
-                            type="radio"
-                            id="no"
-                            name="attendance"
-                            value="no"
-                            onchange="toggleGuests()"
-                        >
+                <!-- DESTINATION -->
 
-                        <label for="no">
-                            ✕ Όχι, δεν θα έρθω
-                        </label>
+                <div class="passport-row">
+
+                    <div class="info-block">
+
+                        <span class="label">
+                            Προορισμός / Destination
+                        </span>
+
+                        <span class="value">
+                            Legend, Νέα Ρόδα
+                        </span>
 
                     </div>
 
                 </div>
 
 
-                <!-- ΑΡΙΘΜΟΣ ΑΤΟΜΩΝ -->
 
-                <div
-                    class="guests-field"
-                    id="guestsField"
-                >
+                <!-- DATE + TIME -->
 
-                    <label for="guests">
-                        Αριθμός ατόμων
-                    </label>
+                <div class="passport-row">
 
-                    <select id="guests">
 
-                        <option value="">
-                            Επιλέξτε αριθμό
-                        </option>
+                    <div class="info-block">
 
-                        <option value="1">
-                            1 άτομο
-                        </option>
+                        <span class="label">
+                            Ημερομηνία / Date
+                        </span>
 
-                        <option value="2">
-                            2 άτομα
-                        </option>
+                        <span class="value">
+                            12 Σεπτεμβρίου 2026
+                        </span>
 
-                        <option value="3">
-                            3 άτομα
-                        </option>
+                    </div>
 
-                        <option value="4">
-                            4 άτομα
-                        </option>
 
-                        <option value="5">
-                            5 άτομα
-                        </option>
+                    <div
+                        class="info-block"
+                        style="text-align:right;"
+                    >
 
-                        <option value="6">
-                            6 άτομα
-                        </option>
+                        <span class="label">
+                            Ώρα / Time
+                        </span>
 
-                        <option value="7">
-                            7 άτομα
-                        </option>
+                        <span class="value">
+                            19:00
+                        </span>
 
-                        <option value="8">
-                            8 άτομα
-                        </option>
+                    </div>
 
-                    </select>
 
                 </div>
 
+
+
+                <!-- VENUE -->
+
+                <div
+                    class="passport-row"
+                    style="
+                        border-bottom:none;
+                        margin-bottom:0;
+                    "
+                >
+
+                    <div class="info-block">
+
+                        <span class="label">
+                            Τοποθεσία / Venue
+                        </span>
+
+                        <span class="value">
+                            Εκκλησάκι Αγίων Θεοδώρων
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RSVP
+            ================================================== -->
+
+            <div class="boarding-pass-zone">
+
+
+                <span
+                    class="label"
+                    style="text-align:center;"
+                >
+                    Κάρτα Επιβίβασης / Boarding Pass
+                </span>
+
+
+                <p class="rsvp-text">
+
+                    Παρακαλούμε επιβεβαιώστε την
+                    «επιβίβασή» σας και τον αριθμό
+                    των ατόμων.
+
+                </p>
+
+
+
+                <!-- OPEN RSVP -->
 
                 <button
-                    class="confirm-rsvp"
-                    onclick="submitRSVP()"
+                    type="button"
+                    class="btn-gold"
+                    id="rsvpButton"
+                    onclick="openRSVP()"
                 >
-                    Καταχώρηση Απάντησης
+                    Επιβεβαίωση RSVP
                 </button>
 
 
+
+                <!-- RSVP FORM -->
+
                 <div
-                    class="success-message"
-                    id="successMessage"
-                ></div>
+                    class="rsvp-form"
+                    id="rsvpForm"
+                >
+
+
+                    <div class="form-title">
+                        Θα παρευρεθείτε;
+                    </div>
+
+
+
+                    <!-- YES / NO -->
+
+                    <div class="attendance-options">
+
+
+                        <div class="attendance-option">
+
+                            <input
+                                type="radio"
+                                id="yes"
+                                name="attendance"
+                                value="yes"
+                                onchange="toggleGuests()"
+                            >
+
+                            <label for="yes">
+                                ✓ Ναι, θα έρθω
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="attendance-option">
+
+                            <input
+                                type="radio"
+                                id="no"
+                                name="attendance"
+                                value="no"
+                                onchange="toggleGuests()"
+                            >
+
+                            <label for="no">
+                                ✕ Όχι, δεν θα έρθω
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- NUMBER OF PEOPLE -->
+
+                    <div
+                        class="guests-field"
+                        id="guestsField"
+                    >
+
+                        <label for="guests">
+                            Αριθμός ατόμων
+                        </label>
+
+
+                        <select id="guests">
+
+                            <option value="">
+                                Επιλέξτε αριθμό
+                            </option>
+
+                            <option value="1">
+                                1 άτομο
+                            </option>
+
+                            <option value="2">
+                                2 άτομα
+                            </option>
+
+                            <option value="3">
+                                3 άτομα
+                            </option>
+
+                            <option value="4">
+                                4 άτομα
+                            </option>
+
+                            <option value="5">
+                                5 άτομα
+                            </option>
+
+                            <option value="6">
+                                6 άτομα
+                            </option>
+
+                            <option value="7">
+                                7 άτομα
+                            </option>
+
+                            <option value="8">
+                                8 άτομα
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CONFIRM -->
+
+                    <button
+                        type="button"
+                        class="confirm-rsvp"
+                        onclick="submitRSVP()"
+                    >
+                        Καταχώρηση Απάντησης
+                    </button>
+
+
+
+                    <!-- SUCCESS -->
+
+                    <div
+                        class="success-message"
+                        id="successMessage"
+                    ></div>
+
+
+                </div>
 
             </div>
 
@@ -1065,388 +1328,213 @@
 
     </div>
 
-</div>
 
 
-<script>
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
 
-    /* =========================================
-       ΑΝΟΙΓΜΑ ΕΙΣΙΤΗΡΙΟΥ
-    ========================================== */
-
-    function openTicket() {
-
-        const cover =
-            document.getElementById("ticketCover");
-
-        const details =
-            document.getElementById("ticketDetails");
+    <script>
 
 
-        cover.classList.add("hidden");
+        /* =====================================================
+           OPEN TICKET
+        ===================================================== */
+
+        function openTicket() {
+
+            const cover =
+                document.getElementById("ticketCover");
+
+            const details =
+                document.getElementById("ticketDetails");
 
 
-        setTimeout(function() {
-
-            details.classList.add("show");
-
-        }, 250);
-
-    }
+            cover.classList.add("opened");
 
 
-    /* =========================================
-       ΑΝΟΙΓΜΑ RSVP
-    ========================================== */
+            setTimeout(function () {
 
-    function openRSVP() {
+                details.classList.add("visible");
 
-        const form =
-            document.getElementById("rsvpForm");
-
-        const button =
-            document.getElementById("rsvpButton");
-
-
-        form.classList.toggle("open");
-
-
-        if (form.classList.contains("open")) {
-
-            button.innerText =
-                "Κλείσιμο RSVP";
-
-        } else {
-
-            button.innerText =
-                "Επιβεβαίωση RSVP";
-
-        }
-
-    }
-
-
-    /* =========================================
-       ΝΑΙ / ΟΧΙ
-    ========================================== */
-
-    function toggleGuests() {
-
-        const yes =
-            document.getElementById("yes");
-
-        const guests =
-            document.getElementById("guestsField");
-
-
-        if (yes.checked) {
-
-            guests.classList.add("visible");
-
-        } else {
-
-            guests.classList.remove("visible");
-
-            document.getElementById("guests").value = "";
-
-        }
-
-    }
-
-
-    /* =========================================
-       ΥΠΟΒΟΛΗ RSVP
-    ========================================== */
-
-    function submitRSVP() {
-
-        const yes =
-            document.getElementById("yes");
-
-        const no =
-            document.getElementById("no");
-
-        const guests =
-            document.getElementById("guests").value;
-
-        const success =
-            document.getElementById("successMessage");
-
-
-        /* Δεν έχει επιλεγεί ΝΑΙ ή ΟΧΙ */
-
-        if (!yes.checked && !no.checked) {
-
-            alert(
-                "Παρακαλούμε επιλέξτε αν θα παρευρεθείτε."
-            );
-
-            return;
+            }, 250);
 
         }
 
 
-        /* ΝΑΙ αλλά χωρίς αριθμό ατόμων */
 
-        if (yes.checked && guests === "") {
+        /* =====================================================
+           OPEN RSVP
+        ===================================================== */
 
-            alert(
-                "Παρακαλούμε επιλέξτε τον αριθμό των ατόμων."
-            );
+        function openRSVP() {
 
-            return;
+            const form =
+                document.getElementById("rsvpForm");
 
-        }
-
-
-        /* Απάντηση ΝΑΙ */
-
-        if (yes.checked) {
-
-            success.innerHTML =
-                "✓ Ευχαριστούμε!<br>" +
-                "Η παρουσία σας επιβεβαιώθηκε " +
-                "για <strong>" +
-                guests +
-                "</strong> " +
-                (guests === "1" ? "άτομο." : "άτομα.");
-
-        }
+            const button =
+                document.getElementById("rsvpButton");
 
 
-        /* Απάντηση ΟΧΙ */
+            form.classList.toggle("open");
 
-        if (no.checked) {
 
-            success.innerHTML =
-                "♡ Ευχαριστούμε που μας ενημερώσατε.<br>" +
-                "Λυπούμαστε που δεν θα μπορέσετε να είστε μαζί μας.";
+            if (form.classList.contains("open")) {
+
+                button.innerText =
+                    "Κλείσιμο RSVP";
+
+            } else {
+
+                button.innerText =
+                    "Επιβεβαίωση RSVP";
+
+            }
 
         }
 
 
-        success.classList.add("show");
+
+        /* =====================================================
+           YES / NO
+        ===================================================== */
+
+        function toggleGuests() {
+
+            const yes =
+                document.getElementById("yes");
+
+            const guestsField =
+                document.getElementById("guestsField");
+
+            const guests =
+                document.getElementById("guests");
 
 
-        /* Κρύβουμε τη φόρμα */
+            if (yes.checked) {
 
-        document.querySelector(
-            ".attendance-options"
-        ).style.display = "none";
+                guestsField.classList.add("visible");
 
+            } else {
 
-        document.querySelector(
-            ".form-title"
-        ).style.display = "none";
+                guestsField.classList.remove("visible");
 
+                guests.value = "";
 
-        document.querySelector(
-            ".confirm-rsvp"
-        ).style.display = "none";
+            }
 
-
-        document.getElementById(
-            "guestsField"
-        ).style.display = "none";
-
-    }
-
-</script>
-
-</body>
-</html>
-            padding: 30px 20px 10px 20px;
-            border-bottom: 1px double #ede4d3;
-            margin: 0 20px;
         }
 
-        .passport-header h1 {
-            font-family: 'Cinzel', serif;
-            color: #caa96e; /* Ανοιχτό Χρυσό */
-            font-size: 1.4em;
-            letter-spacing: 4px;
-            margin: 0 0 5px 0;
-            text-transform: uppercase;
+
+
+        /* =====================================================
+           SUBMIT RSVP
+        ===================================================== */
+
+        function submitRSVP() {
+
+            const yes =
+                document.getElementById("yes");
+
+            const no =
+                document.getElementById("no");
+
+            const guests =
+                document.getElementById("guests").value;
+
+            const success =
+                document.getElementById("successMessage");
+
+
+            /* Δεν έχει επιλεγεί απάντηση */
+
+            if (!yes.checked && !no.checked) {
+
+                alert(
+                    "Παρακαλούμε επιλέξτε Ναι ή Όχι."
+                );
+
+                return;
+
+            }
+
+
+            /* Ναι χωρίς αριθμό ατόμων */
+
+            if (yes.checked && guests === "") {
+
+                alert(
+                    "Παρακαλούμε επιλέξτε τον αριθμό των ατόμων."
+                );
+
+                return;
+
+            }
+
+
+            /* ==============================================
+               ΝΑΙ
+            ============================================== */
+
+            if (yes.checked) {
+
+                success.innerHTML =
+                    "✓ Ευχαριστούμε πολύ!<br>" +
+                    "Η παρουσία σας επιβεβαιώθηκε " +
+                    "για <strong>" +
+                    guests +
+                    "</strong> " +
+                    (guests === "1"
+                        ? "άτομο."
+                        : "άτομα.");
+
+            }
+
+
+            /* ==============================================
+               ΟΧΙ
+            ============================================== */
+
+            if (no.checked) {
+
+                success.innerHTML =
+                    "♡ Ευχαριστούμε που μας ενημερώσατε.<br>" +
+                    "Λυπούμαστε που δεν θα μπορέσετε " +
+                    "να είστε μαζί μας.";
+
+            }
+
+
+            /* Εμφάνιση επιτυχίας */
+
+            success.classList.add("show");
+
+
+            /* Κρύβουμε τη φόρμα */
+
+            document.querySelector(
+                ".attendance-options"
+            ).style.display = "none";
+
+
+            document.querySelector(
+                ".form-title"
+            ).style.display = "none";
+
+
+            document.querySelector(
+                ".confirm-rsvp"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "guestsField"
+            ).style.display = "none";
+
         }
 
-        .passport-header h2 {
-            font-size: 0.85em;
-            letter-spacing: 3px;
-            color: #a0a0a0;
-            margin: 0;
-            text-transform: uppercase;
-        }
+    </script>
 
-        /* Απαλό Χρυσό Έμβλημα / Σφραγίδα */
-        .passport-emblem {
-            width: 80px;
-            height: 80px;
-            margin: 25px auto;
-            border: 2px dashed #caa96e;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .passport-emblem::before {
-            content: "✈";
-            font-size: 2rem;
-            color: #caa96e;
-        }
-
-        /* Στοιχεία Καλεσμένου & Πτήσης */
-        .passport-body {
-            padding: 25px 30px;
-            text-align: left;
-        }
-
-        .passport-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #f7f4ec;
-            padding-bottom: 5px;
-        }
-
-        .info-block {
-            flex: 1;
-        }
-
-        .label {
-            font-size: 0.7em;
-            color: #baa074; /* Απαλό καφέ-χρυσό */
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .value {
-            font-size: 1.05em;
-            color: #333333;
-            font-weight: 400;
-        }
-
-        .names {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4em;
-            color: #caa96e; /* Ανοιχτό Σαμπανιζέ Χρυσό */
-            font-weight: 700;
-            text-align: center;
-            margin: 15px 0 25px 0;
-            letter-spacing: 2px;
-        }
-
-        /* Κάρτα Επιβίβασης / RSVP */
-        .boarding-pass-zone {
-            background: linear-gradient(135deg, #ffffff 0%, #fffefb 100%);
-            border-top: 2px dashed #e3d4b6;
-            padding: 30px 20px;
-            position: relative;
-        }
-
-        /* Εφέ κομμένου εισιτηρίου στις άκρες */
-        .boarding-pass-zone::before, .boarding-pass-zone::after {
-            content: "";
-            position: absolute;
-            top: -10px;
-            width: 20px;
-            height: 20px;
-            background-color: #faf9f6;
-            border-radius: 50%;
-        }
-        .boarding-pass-zone::before { left: -10px; }
-        .boarding-pass-zone::after { right: -10px; }
-
-        .rsvp-text {
-            font-size: 0.9em;
-            color: #666666;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        /* Κουμπί με Απαλό Χρυσό Gradient */
-        .btn-gold {
-            display: block;
-            background: linear-gradient(135deg, #e3d4b6 0%, #caa96e 100%);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 20px;
-            font-size: 0.95em;
-            font-weight: 600;
-            border-radius: 25px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(202, 169, 110, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(202, 169, 110, 0.35);
-            background: linear-gradient(135deg, #caa96e 0%, #baa074 100%);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="passport-card">
-        
-        <!-- Εξώφυλλο / Κεφαλίδα Διαβατηρίου -->
-        <div class="passport-header">
-            <h1>Passport</h1>
-            <h2>Boarding Pass Invitation</h2>
-        </div>
-
-        <!-- Έμβλημα Αεροπλάνου -->
-        <div class="passport-emblem"></div>
-
-        <!-- Στοιχεία Διαβατηρίου -->
-        <div class="passport-body">
-            
-            <div class="label" style="text-align: center;">Ονόματα Επιβατών / Passengers</div>
-            <div class="names">ΖΩΗ & ΔΗΜΗΤΡΗΣ</div>
-
-            <div class="passport-row">
-                <div class="info-block">
-                    <span class="label">Ιερός Ναός / Ceremony Venue</span>
-                    <span class="value">Νέα Ρόδα, Χαλκιδική</span>
-                </div>
-            </div>
-
-            <div class="passport-row">
-                <div class="info-block">
-                    <span class="label">Ημερομηνία / Date</span>
-                    <!-- Αλλάξτε το "Σεπτέμβριος 2027" με την ακριβή ημέρα (π.χ. Σάββατο 11 Σεπτεμβρίου 2027) -->
-                    <span class="value">Σεπτέμβριος 2027</span>
-                </div>
-                <div class="info-block" style="text-align: right;">
-                    <span class="label">Ώρα / Time</span>
-                    <span class="value">19:00</span>
-                </div>
-            </div>
-
-            <div class="passport-row" style="border-bottom: none; margin-bottom: 0;">
-                <div class="info-block">
-                    <span class="label">Δεξίωση / Celebration</span>
-                    <span class="value">Legend Beach Bar</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Ζώνη Επιβίβασης / RSVP -->
-        <div class="boarding-pass-zone">
-            <span class="label" style="margin-bottom: 10px; display: block;">Κάρτα Επιβίβασης / Boarding Pass</span>
-            <p class="rsvp-text">Παρακαλούμε επιβεβαιώστε την «επιβίβασή» σας και τον αριθμό των ατόμων πατώντας το κουμπί RSVP παρακάτω.</p>
-            
-            <!-- Αντικαταστήστε το # με το Link από το δικό σας Google Form -->
-            <a href="#" class="btn-gold" target="_blank">Επιβεβαιωση RSVP</a>
-        </div>
-
-    </div>
 
 </body>
 </html>
